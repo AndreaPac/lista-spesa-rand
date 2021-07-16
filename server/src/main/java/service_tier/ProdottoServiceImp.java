@@ -10,11 +10,11 @@ import model_tier.Prodotto;
 import persistance_tier.ProdottoRepository;
 
 @Transactional
-public class ProdottoServiceImp implements ProdottoService{
+public class ProdottoServiceImp implements ProdottoService {
 
 	@Autowired
 	ProdottoRepository pr;
-	
+
 	@Override
 	public List<Prodotto> mostraProdotti() {
 		return pr.findAll();
@@ -22,19 +22,19 @@ public class ProdottoServiceImp implements ProdottoService{
 
 	@Override
 	public List<Prodotto> aggiungiProdotto(Prodotto p) {
-		if(p != null) {
+		if (p != null) {
 			pr.save(p);
 		}
-	return mostraProdotti();
+		return mostraProdotti();
 	}
 
 	@Override
 	public List<Prodotto> rimuoviProdotto(Prodotto p) {
-		if(p.getId()!= null) {
+		if (p.getId() != null) {
 			pr.deleteById(p.getId());
 		}
-		
+
 		return mostraProdotti();
 	}
-		
+
 }

@@ -13,18 +13,17 @@ public class Prodotto {
 	private Long id;
 	@Column
 	private String nome;
-	@Column
-	private double prezzo;
+
 
 	public Prodotto() {
 
 	}
 
-	public Prodotto(Long id, String nome, double prezzo) {
+	public Prodotto(Long id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.prezzo = prezzo;
+		
 	}
 
 	public Long getId() {
@@ -43,12 +42,5 @@ public class Prodotto {
 		this.nome = nome;
 	}
 
-	public double getPrezzo() {
-		return prezzo;
-	}
-
-	public void setPrezzo(double prezzo) {
-		this.prezzo = prezzo;
-	}
-
+	
 }
