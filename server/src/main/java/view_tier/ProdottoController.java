@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import model_tier.Prodotto;
@@ -19,6 +20,7 @@ public class ProdottoController {
 	ProdottoService ps;
 
 	@RequestMapping("/get-all")
+	@ResponseBody
 	public List<Prodotto> getAllProdotto() {
 		System.out.println("-----SIAMO DENTRO GET ALL PRODOTTO---------");
 		return ps.mostraProdotti();
@@ -26,12 +28,14 @@ public class ProdottoController {
 	}
 
 	@RequestMapping("/remove")
+	@ResponseBody
 	public void rimuovi(@RequestBody Prodotto p) {
 		System.out.println("-----SIAMO DENTRO REMOVE---------");
 		ps.rimuoviProdotto(p);
 	}
 
 	@RequestMapping("/add")
+	@ResponseBody
 	public void aggiungi(@RequestBody Prodotto p) {
 		System.out.println("-----SIAMO DENTRO ADD---------");
 		ps.aggiungiProdotto(p);
