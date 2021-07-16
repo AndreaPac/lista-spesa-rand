@@ -6,7 +6,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import model_tier.Prodotto;
+import model_tier.copy.Prodotto;
 import persistance_tier.ProdottoRepository;
 
 @Transactional
