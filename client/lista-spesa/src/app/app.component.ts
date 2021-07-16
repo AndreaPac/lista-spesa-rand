@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Prodotto } from './prodotto';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'lista-spesa';
+  prodotto : Prodotto = new Prodotto();
+  prodotti : Prodotto[]= [{nome:"mela"}];
+
+  aggiungi(){
+
+  }
+
+  rimuovi(){
+
+  }
 }
